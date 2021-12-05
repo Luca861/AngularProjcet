@@ -12,6 +12,7 @@ import { OrderListComponent } from './core/components/order-list/order-list.comp
 import { OrderSingleComponent } from './core/components/order-single/order-single.component';
 import { OrderDetailComponent } from './core/components/order-detail/order-detail.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
     OrderSingleComponent,
     OrderDetailComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
