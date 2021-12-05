@@ -1,0 +1,24 @@
+div {
+  background-color: rgb(218,232,251);
+  border: solid 1px rgb(109,143,189);
+  height: 80vh;
+
+
+}
+
+section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.first-item{
+  flex-grow: 1;
+  padding: 1%;
+  margin-top: 1%;
+}
+
+.second-item{
+  flex-grow: 1;
+  padding: 1%;
+  margin-top: 1%;
+}

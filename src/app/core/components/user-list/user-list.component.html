@@ -1,0 +1,8 @@
+<div class="container d-flex flex-column align-items-center">
+  <h2>User-list</h2>
+  <div *ngFor="let person of user">
+    <app-user-single [person]='person' (showUser)="showDetailOn($event)"></app-user-single>
+  </div>
+</div>
+
+

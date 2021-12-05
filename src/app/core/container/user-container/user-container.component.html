@@ -1,0 +1,9 @@
+<div class="container text-center fw-bold pt-2">
+  <h4 class="pt-3">user-container.component</h4>
+  <section >
+    <app-user-list [user]='myUsers' (showDetail)="showUser($event)" class="first-item"></app-user-list>
+    <app-user-detail class="second-item" *ngIf="userOn" [user]='userDetail' (hideDetail)="hideDetail($event)"></app-user-detail>
+  </section>
+</div>
+
+
