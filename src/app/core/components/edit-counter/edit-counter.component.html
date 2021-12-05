@@ -1,0 +1,16 @@
+
+<div class="card mt-5">
+  <div class="card body">
+    <h1>Editor del Contatore</h1>
+    <form class="mt-2">
+      <div class="label-container">
+        <label class="my-1" for="number">Inserisci un numero</label>
+        <input type="number" class="form-control" id="number" name="value" [(ngModel)]="value">
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-5">
+        <button class="btn btn-primary me-md-2" type="button" (click)='addValue()' >Aggiungi al contatore</button>
+        <button class="btn btn-primary" type="button" (click)="subValue()">Sottrai al contatore</button>
+      </div>
+    </form>
+  </div>
+</div>
