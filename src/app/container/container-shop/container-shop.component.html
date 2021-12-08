@@ -1,0 +1,4 @@
+<div class="container d-flex flex-column">
+<app-shop [beerList] = "beerList" (submitted)="selectBeer($event)"></app-shop>
+<app-card class="align-self-center mt-5" [selectedBeer]="selectedBeer" ></app-card>
+</div>

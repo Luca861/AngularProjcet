@@ -24,7 +24,7 @@ export class AppService {
 
   getBeerById(id:number):Observable<IBeer>{
   return this.beerObservable.pipe(
-     map(beers => beers.find(beer => beer.id === id))
+     map(beers => beers.find(beer => beer.id == id))
      )as Observable<IBeer>
   }
 

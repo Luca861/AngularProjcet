@@ -1,15 +1,16 @@
-<form #f="ngForm" (ngSubmit)="submit(f)">
+<form #f="ngForm" (ngSubmit)="submit(f)" >
 <div class="container d-flex justify-content-evenly mt-4">
   <div class="col-md-4">
-    <label for="beers" class="form-label">Beer</label>
-      <select class="form-select form-select-lg" name="beers" required ngModel #beerField="ngModel">
+    <label for="id" class="form-label">Beer</label>
+      <select class="form-select form-select-lg" name="id" required  ngModel #beerField="ngModel">
         <option value="{{ beer.id }}" *ngFor="let beer of beerList"> {{ beer.name }} </option>
       </select>
   </div>
   <div class="col-md-4">
     <label for="type" class="form-label">Type</label>
       <select class="form-select form-select-lg" name="type" required ngModel #typeField='ngModel'>
-        <option value="1" *ngFor="let beer of beerList"> {{beer.type}}</option>
+        <option value='small'> Small </option>
+        <option value='medium'> Medium </option>
       </select>
   </div>
 </div>
@@ -17,3 +18,5 @@
   <button class="btn btn-primary mt-3" [disabled]="f.invalid" type="submit">Search</button>
 </div>
 </form>
+
+

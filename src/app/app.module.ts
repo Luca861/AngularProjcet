@@ -5,13 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { CardComponent } from './components/card/card.component';
+import { ContainerShopComponent } from './container/container-shop/container-shop.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShopComponent
+    ShopComponent,
+    CardComponent,
+    ContainerShopComponent
   ],
   imports: [
     BrowserModule,
