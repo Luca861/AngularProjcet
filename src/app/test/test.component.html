@@ -1,0 +1,7 @@
+<p> L'api ha restituito {{ numProperties.length}} proprietà</p>
+<h2> Proprietà:</h2>
+<h3 *ngFor="let name of keys">{{name}}</h3>
+<div *ngFor="let item of numProperties">
+  <p>{{item.Name}}</p>
+  <p>{{item.Path}}</p>
+</div>
