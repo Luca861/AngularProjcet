@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AppService } from '../app.service';
 import { ITest } from '../shared/models/test-model';
 
@@ -9,7 +10,8 @@ import { ITest } from '../shared/models/test-model';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit, OnDestroy {
+  subscription! : Subscription;
   numProperties : ITest[] = [];
   keys :string[] = [];
 
@@ -18,17 +20,16 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.http.getAll()
-  .subscribe(data => this.keys = Object.keys(data));
-
-  this.http.getAll()
+  this.subscription = this.http.getAll()
   .subscribe(data => {
+    this.keys = Object.keys(data)
     this.numProperties = Object.values(data)
-    console.log(this.numProperties)})
+  });
 
+}
 
-
-
+ngOnDestroy(): void {
+    this.subscription.unsubscribe;
 }
 
 }
