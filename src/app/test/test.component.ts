@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
+import { ITest } from '../shared/models/test-model';
 
 
 
@@ -9,7 +10,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-  numProperties : any = [];
+  numProperties : ITest[] = [];
   keys :string[] = [];
 
 
@@ -21,7 +22,11 @@ export class TestComponent implements OnInit {
   .subscribe(data => this.keys = Object.keys(data));
 
   this.http.getAll()
-  .subscribe(data => this.numProperties = Object.values(data))
+  .subscribe(data => {
+    this.numProperties = Object.values(data)
+    console.log(this.numProperties)})
+
+
 
 
 }
