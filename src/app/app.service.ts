@@ -22,9 +22,9 @@ export class AppService {
     }
 
 
-  getBeerById(id:number):Observable<IBeer>{
+  getBeerById(value:IBeer):Observable<IBeer>{
   return this.beerObservable.pipe(
-     map(beers => beers.find(beer => beer.id == id))
+     map(beers => beers.find(beer => beer.id == value.id && beer.type == value.type))
      )as Observable<IBeer>
   }
 

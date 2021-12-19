@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription,PartialObserver } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 import { IBeer } from 'src/app/models/beer';
@@ -8,7 +8,7 @@ import { IBeer } from 'src/app/models/beer';
   templateUrl: './container-shop.component.html',
   styleUrls: ['./container-shop.component.scss']
 })
-export class ContainerShopComponent implements OnInit {
+export class ContainerShopComponent implements OnInit,OnDestroy {
   subscription!: Subscription;
   beerList :IBeer[] = [];
   selectedBeer! : IBeer;
@@ -21,12 +21,13 @@ export class ContainerShopComponent implements OnInit {
       data => this.beerList = data)
   }
 
-  selectBeer(id : number){
-  const observer : PartialObserver<IBeer> = {
-   next : (birra) => {
-     this.selectedBeer = birra;
-   }
+  selectBeer(item: IBeer){
+  this.beerService.getBeerById(item).subscribe
+   (data => this.selectedBeer = data)
+}
+
+  ngOnDestroy(): void {
+      this.subscription.unsubscribe();
   }
-   this.beerService.getBeerById(id).subscribe(observer);
-   }
+
 }

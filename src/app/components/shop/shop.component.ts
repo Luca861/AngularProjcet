@@ -10,13 +10,13 @@ import { IBeer } from 'src/app/models/beer';
 export class ShopComponent implements OnInit {
 
   @Input() beerList: IBeer[] = [];
-  @Output() submitted = new EventEmitter<number>();
+  @Output() submitted = new EventEmitter<IBeer>();
 
   constructor() { }
 
   ngOnInit(): void {}
 
   submit(f:NgForm){
-    this.submitted.emit(f.form.value.id);
+    this.submitted.emit(f.form.value)
   }
 }
