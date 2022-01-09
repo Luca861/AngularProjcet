@@ -1,0 +1,7 @@
+<div *ngIf="currentJoke$ | async as joke">
+  {{ joke  }}
+<div class="d-flex justify-content-center">
+<button class="btn btn-primary" (click)="like.emit(joke)">Like</button>
+<button class="btn btn-danger" (click)="dislike.emit(joke)">DisLike</button>
+</div>
+</div>

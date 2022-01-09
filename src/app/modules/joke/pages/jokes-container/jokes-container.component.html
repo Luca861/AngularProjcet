@@ -1,0 +1,5 @@
+<app-current-joke (like)="like($event)" (dislike)="dislike($event)"></app-current-joke>
+<div class="d-flex justify-content-center flex-column">
+<app-like-jokes [likeJokes]='likeJokes'></app-like-jokes>
+<app-dislike-jokes [dislikeJokes]="dislikeJokes"></app-dislike-jokes>
+</div>
