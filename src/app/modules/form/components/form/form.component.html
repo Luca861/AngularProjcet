@@ -1,0 +1,18 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()" class="d-flex justify-content-between align-items-center p-2">
+  <div class="d-flex justify-content-between align-items-center p-2">
+    <label for="type" class="form-label ms-3"></label>
+      <select class="form-select-lg" name="type" required formControlName="category">
+        <option value="" selected disabled>Category</option>
+        <option value='cats'>Cats</option>
+        <option value='birds'>Birds</option>
+        <option value="shibes">Shibes</option>
+      </select>
+      <div class="d-flex align-items-center ms-5">
+        <input type="number" name="number" class="search p-2 inp-pers" placeholder="Inserisci numero" required formControlName="number">
+      </div>
+        <button type="submit" class="btn btn btn-outline-info ms-3" [disabled]="myForm.invalid"> INVIA </button>
+    </div>
+</form>
+
+
+

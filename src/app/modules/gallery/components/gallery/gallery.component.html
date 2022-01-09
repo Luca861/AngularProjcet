@@ -1,0 +1,5 @@
+<div *ngIf="animalImg$ | async as item">
+  <div *ngFor="let animal of item">
+    <img [src]="animal" />
+  </div>
+</div>
